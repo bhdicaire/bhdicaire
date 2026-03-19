@@ -29,7 +29,7 @@ jobs:
           config_timezone: America/Toronto
 
           # Base sections — keeps it clean for a professional profile
-          base: header, activity, community, repositories
+          base: header
           base_hireable: yes
 
       - name: acti_comm
