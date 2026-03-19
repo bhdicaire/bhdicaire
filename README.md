@@ -3,11 +3,11 @@
 </picture>
 
 <picture>
-  <img align="left" width="49%" src="./repositories.svg" />
+  <img align="center" width="49%" src="./repositories.svg" />
 </picture>
 
 <picture>
-  <img align="right" width="49%" src="./acti_comm.svg" />
+  <img align="center" width="49%" src="./acti_comm.svg" />
 </picture>
 
 <picture>
