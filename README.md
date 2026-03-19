@@ -1,5 +1,5 @@
 <picture>
-  <img align="left" width="100%" src="./header.svg" alt="Benoît H. Dicaire" />
+  <img align="left" src="./header.svg" alt="Benoît H. Dicaire" />
 </picture>
 
 <a href="https://github.com/bhdicaire">
