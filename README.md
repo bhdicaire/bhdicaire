@@ -1,15 +1,15 @@
 <picture>
-  <img align="center" width="49%" src="./header.svg" />
+  <img align="left" src="./header.svg" />
 </picture>
 
 <picture>
-  <img align="center" width="49%" src="./repositories.svg" />
+  <img align="left" width="49%" src="./repositories.svg" />
 </picture>
 
 <picture>
-  <img align="center" width="49%" src="./acti_comm.svg" />
+  <img align="right" width="49%" src="./acti_comm.svg" />
 </picture>
 
 <picture>
-  <img align="center" src="./grid-snake.svg" />
+  <img align="left" src="./grid-snake.svg" />
 </picture>
