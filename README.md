@@ -1,9 +1,9 @@
 <picture>
-  <img align="left" src="./header.svg" alt="Benoît H. Dicaire" />
+  <img align="center" src="./header.svg" alt="Benoît H. Dicaire" />
 </picture>
 
 <a href="https://github.com/bhdicaire">
-  <img align="left" width="49%" src="./repositories.svg" />
+  <img align="center" width="49%" src="./repositories.svg" />
 </a>
 <a href="https://github.com/bhdicaire">
   <img align="center" width="49%" src="./acti_comm.svg" />
