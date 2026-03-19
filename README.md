@@ -1,14 +1,16 @@
 <picture>
-  <img align="left" src="./header.svg" />
-</picture>
-<br>
-<picture>
-  <img align="center" width="49%" src="./repositories.svg" />
+  <img src="header.svg" width="100%" alt="Benoît H. Dicaire" />
 </picture>
 
-<picture>
-  <img align="center" width="49%" src="./acti_comm.svg" />
-</picture>
+<!-- Row 2: activity+community on the left, repositories on the right -->
+<table width="100%"><tr>
+  <td width="50%" valign="top">
+    <img src="github-repositories.svg" width="100%" alt="Repositories">
+  </td>
+  <td width="50%" valign="top">
+    <img src="github-activity-community.svg" width="100%" alt="Activity and community">
+  </td>
+</tr></table>
 
 <picture>
   <img align="left" src="./grid-snake.svg" />
