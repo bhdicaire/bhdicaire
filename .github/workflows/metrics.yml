@@ -31,6 +31,7 @@ jobs:
           # Base sections — keeps it clean for a professional profile
           base: header
           base_hireable: yes
+          base_indepth: yes
 
       - name: acti_comm
         if: ${{ success() || failure() }}
