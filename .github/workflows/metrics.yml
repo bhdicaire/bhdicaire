@@ -4,105 +4,52 @@ on:
   # Update metrics daily at midnight UTC
   schedule:
     - cron: "0 0 * * *"
-  # Allow manual runs from the Actions tab
   workflow_dispatch:
-  # Also update when pushing to main
   push:
     branches: ["main"]
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    # Required by current lowlighter/metrics — older docs omit this block
     environment:
       name: production
-    # Explicit write permission is required; GITHUB_TOKEN alone is insufficient.
-    # You must use a classic PAT stored as METRICS_TOKEN (fine-grained tokens
-    # are not supported because GitHub blocks them on the GraphQL API).
     permissions:
       contents: write
 
     steps:
 
-      # ── 1. General stats ─────────────────────────────────────────────────
-      # Generates: github-metrics.svg
-      # Sections: header card + half-year isometric calendar + language breakdown
       - name: General stats
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-metrics.svg
+          filename: header.svg
           user: bhdicaire
           template: classic
           config_timezone: America/Toronto
 
           # Base sections — keeps it clean for a professional profile
-          base: header, activity, community, repositories, metadata
-          base_hireable: yes            # shows "available for hire" badge on header
+          base: header, activity, community, repositories
+          base_hireable: yes
 
-          # Isometric calendar — full half-year view
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
-
-          # Language breakdown — weighted by recent commits
-          plugin_languages: yes
-          plugin_languages_ignored: >-
-            html, css, dockerfile
-          plugin_languages_limit: 6
-          plugin_languages_analysis_timeout: 15
-          plugin_languages_details: bytes-size, percentage
-
-      # ── 2. Starred topics ────────────────────────────────────────────────
-      # Generates: github-topics.svg
-      # Shows the topics you've starred — surfaces your interests visually
-      - name: Starred topics
+      - name: acti_comm
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-topics.svg
+          filename: acti_comm.svg
           user: bhdicaire
           template: classic
           config_timezone: America/Toronto
-
-          base: ""                      # no base sections — topics only
-          plugin_topics: yes
-          plugin_topics_mode: icons     # compact icon grid, not labels
-          plugin_topics_limit: 0        # 0 = show all starred topics
-
-      # ── 3. Achievements ──────────────────────────────────────────────────
-      # Generates: github-achievements.svg
-      - name: Achievements
+          base: activity, community
+          
+      - name: repositories
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-achievements.svg
+          filename: repositories.svg
           user: bhdicaire
           template: classic
           config_timezone: America/Toronto
-
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_secrets: yes   # include private achievements
-
-      # ── 4. Recent activity ───────────────────────────────────────────────
-      # Generates: github-activity.svg
-      - name: Recent activity
-        if: ${{ success() || failure() }}
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          filename: github-activity.svg
-          user: bhdicaire
-          template: classic
-          config_timezone: America/Toronto
-
-          base: ""
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 14
-          plugin_activity_filter: >-
-            push, issue, pr, release, fork, review, comment
+          base: repositories
