@@ -3,7 +3,7 @@
 </picture>
 
 <a href="https://github.com/bhdicaire">
-  <img align="center" width="49%" src="./repositories.svg" />
+  <img align="left" width="49%" src="./repositories.svg" />
 </a>
 <a href="https://github.com/bhdicaire">
   <img align="center" width="49%" src="./acti_comm.svg" />
