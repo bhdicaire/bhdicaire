@@ -23,6 +23,10 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
+      - name: Trim SVG left gutter
+        run: |
+          perl -0pi -e 's/viewBox="-16 -32 880 192" width="880"/viewBox="0 -32 864 192" width="864"/g' dist/github-snake.svg dist/github-snake-dark.svg
+
       - name: Publish generated assets
         uses: crazy-max/ghaction-github-pages@v4
         with:
