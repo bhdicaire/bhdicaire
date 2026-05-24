@@ -41,6 +41,7 @@ jobs:
           user: bhdicaire
           template: classic
           config_timezone: America/Toronto
+          config_display: columns
           base: repositories, activity
           repositories_affiliations: owner
           repositories_forks: no
