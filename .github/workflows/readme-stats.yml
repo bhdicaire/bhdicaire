@@ -69,7 +69,7 @@ jobs:
           }
 
           const stars = repos.reduce((total, repo) => total + repo.stargazers_count, 0);
-          const template = fs.readFileSync("TEMPLATE.md", "utf8");
+          const template = fs.readFileSync(".github/README.template.md", "utf8");
           const readme = template
             .replaceAll("{{ ACCOUNT_AGE }}", String(accountAge))
             .replaceAll("{{ STARS }}", String(stars));
