@@ -1,6 +1,6 @@
 <p>
   <strong>Benoît H. Dicaire</strong><br>
-  On GitHub for {{ ACCOUNT_AGE }} years. Repositories I own have received {{ STARS }} stars.
+  On GitHub for {{ ACCOUNT_AGE }} years, repositories I own have received {{ STARS }} stars.
 </p>
 
 <picture>
