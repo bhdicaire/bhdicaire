@@ -1,12 +1,9 @@
 <a href="https://github.com/bhdicaire">
-  <img align="center" width="49%" src="./header.svg" />
+  <img align="center" width="100%" src="./header.svg" alt="Benoît H. Dicaire GitHub profile summary" />
 </a>
 <br/>
 <a href="https://github.com/bhdicaire">
-  <img align="center" width="49%" src="./repositories.svg" />
-</a>
-<a href="https://github.com/bhdicaire">
-  <img align="center" width="49%" src="./acti_comm.svg" />
+  <img align="center" width="100%" src="./summary.svg" alt="GitHub repository and activity metrics" />
 </a>
 
 <picture>
