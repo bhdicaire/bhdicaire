@@ -1,6 +1,6 @@
 <p>
   <strong>Benoît H. Dicaire</strong><br>
-  On GitHub for 14 years. Repositories I own have received 1118 stars.
+  On GitHub for {{ ACCOUNT_AGE }} years. Repositories I own have received {{ STARS }} stars.
 </p>
 
 <picture>
