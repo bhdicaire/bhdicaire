@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -22,8 +22,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USER: bhdicaire
         run: |
-          node <<'NODE'
-          const fs = require("node:fs");
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
 
           const user = process.env.GITHUB_USER;
           const token = process.env.GITHUB_TOKEN;
