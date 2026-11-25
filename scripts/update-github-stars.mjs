@@ -1,6 +1,7 @@
-// Writes data/github-stars.json: the star count of every public repository
+// Writes data/github-stars.yml: the star count of every public repository
 // of the owners below, keyed by lower-case "owner/repository".
-// bhdicaire.com reads the file when it builds.
+// bhdicaire.com reads the file when it builds. YAML, not JSON: the site maps
+// the json suffix to its feed format, so Hugo cannot fetch a remote .json.
 import { mkdir, writeFile } from "node:fs/promises";
 
 const owners = ["bhdicaire", "vanityURLs", "wgo-audit"];
@@ -40,5 +41,6 @@ if (Object.keys(sorted).length === 0) {
 }
 
 await mkdir("data", { recursive: true });
-await writeFile("data/github-stars.json", `${JSON.stringify({ repositories: sorted }, null, 2)}\n`);
+const lines = Object.entries(sorted).map(([repo, stars]) => `  "${repo}": ${stars}`);
+await writeFile("data/github-stars.yml", ["repositories:", ...lines, ""].join("\n"));
 console.log(`${Object.keys(sorted).length} repositories written`);

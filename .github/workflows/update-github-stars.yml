@@ -27,10 +27,10 @@ jobs:
 
       - name: Commit when a count changed
         run: |
-          if [[ -n "$(git status --porcelain data/github-stars.json)" ]]; then
+          if [[ -n "$(git status --porcelain data/github-stars.yml)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/github-stars.json
+            git add data/github-stars.yml
             git commit -m "chore: update github star counts"
             git push
           fi
